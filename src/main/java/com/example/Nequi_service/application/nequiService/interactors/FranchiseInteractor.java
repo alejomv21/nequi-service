@@ -7,6 +7,7 @@ import com.example.Nequi_service.application.nequiService.exceptions.FranchiseCu
 import com.example.Nequi_service.application.nequiService.model.request.FranchiseRequestModel;
 import com.example.Nequi_service.application.nequiService.model.response.FranchiseResponseModel;
 import com.example.Nequi_service.application.nequiService.presenter.IfranchisePresenter;
+import com.example.Nequi_service.domain.Franchise;
 import com.example.Nequi_service.domain.Ifranchise;
 import com.example.Nequi_service.domain.factories.IfranchiseFactory;
 
@@ -33,6 +34,13 @@ public class FranchiseInteractor implements IfranchiseRegisterBoundary {
 
         FranchiseResponseModel responseModel = new FranchiseResponseModel(franchises.getId(), franchises.getName(), franchises.getBranches(), franchises.getDescription());
 
+        return presenter.prepareSuccessView(responseModel);
+    }
+
+    @Override
+    public FranchiseResponseModel createBranch(String idFranchise, String idBranch) throws FranchiseCustomeException{
+        Franchise franchises = gateway.addBranch(idFranchise, idBranch);
+        FranchiseResponseModel responseModel = new FranchiseResponseModel(franchises.getId(), franchises.getName(), franchises.getBranches(), franchises.getDescription());
         return presenter.prepareSuccessView(responseModel);
     }
 }

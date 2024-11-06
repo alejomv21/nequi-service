@@ -6,4 +6,5 @@ import com.example.Nequi_service.application.nequiService.model.response.Franchi
 
 public interface IfranchiseRegisterBoundary {
     FranchiseResponseModel create(FranchiseRequestModel requestModel) throws FranchiseCustomeException;
+    FranchiseResponseModel createBranch(String idFranchise, String idBranch) throws FranchiseCustomeException;
 }

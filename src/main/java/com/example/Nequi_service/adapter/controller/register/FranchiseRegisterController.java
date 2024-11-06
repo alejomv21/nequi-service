@@ -18,6 +18,11 @@ public class FranchiseRegisterController {
     public FranchiseResponseModel create(@RequestBody FranchiseRequestModel requestModel) throws FranchiseCustomeException {
         return this.inputBoundary.create(requestModel);
     }
+
+    @PostMapping("/franchise/branch")
+    public FranchiseResponseModel createBranch(@RequestParam String idFranchise, String idBranch) throws FranchiseCustomeException {
+        return this.inputBoundary.createBranch(idFranchise, idBranch);
+    }
     @GetMapping("hola")
     public String getString(){
         return "hola";

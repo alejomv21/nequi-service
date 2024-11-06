@@ -5,30 +5,23 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Document("GroceryItem")
-public class FranchiseMongoMapper {
+@Document("Branch")
+public class BranchMongoMapper {
     @Id
     private String id;
     private String name;
-    private List<String> branches;
+    private List<String> products;
     private String description;
+    private String address;
 
-    public FranchiseMongoMapper(String id, String name, List<String> branches, String description){
+    public BranchMongoMapper(String id, String name, List<String> products, String description, String address){
         super();
         this.id = id;
         this.name = name;
-        this.branches = branches;
+        this.products = products;
         this.description = description;
+        this.address = address;
     }
-
-    public List<String> getBranches() {
-        return branches;
-    }
-
-    public void setBranches(List<String> branches) {
-        this.branches = branches;
-    }
-
     public String getId() {
         return id;
     }
@@ -37,10 +30,19 @@ public class FranchiseMongoMapper {
         return name;
     }
 
+    public List<String> getProducts() {
+        return products;
+    }
+
     public String getDescription() {
         return description;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    // Setters
     public void setId(String id) {
         this.id = id;
     }
@@ -49,7 +51,15 @@ public class FranchiseMongoMapper {
         this.name = name;
     }
 
+    public void setProducts(List<String> products) {
+        this.products = products;
+    }
+
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

@@ -9,4 +9,5 @@ public class FranchiseFactory implements IfranchiseFactory{
     public Franchise create(String id, String name, List<String> branches, String description){
         return new Franchise(id, name, branches, description);
     }
+
 }

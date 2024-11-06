@@ -6,4 +6,5 @@ import com.example.Nequi_service.application.nequiService.model.response.Franchi
 public interface IfranchisePresenter {
     FranchiseResponseModel prepareFailView(FranchiseCustomeException e) throws FranchiseCustomeException;
     FranchiseResponseModel prepareSuccessView(FranchiseResponseModel responseModel);
+
 }

@@ -14,19 +14,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FranchiseConfiguration {
     @Bean
-    public IfranchisePresenter commonProductPresenter() {
+    public IfranchisePresenter franchisePresenter() {
         return new FranchisePresenter();
     }
     @Bean
-    public IfranchiseFactory commonProductFactory() {
+    public IfranchiseFactory franchiseFactory() {
         return new FranchiseFactory();
     }
     @Bean
-    public IfranchiseRegisterGateway commonProductRegisterGateway() {
+    public IfranchiseRegisterGateway franchiseGateway() {
         return new FranchiseRegisterGateway();
     }
     @Bean
-    public IfranchiseRegisterBoundary commonProductInputBoundary(IfranchisePresenter commonProductPresenter, IfranchiseFactory commonProductFactory, IfranchiseRegisterGateway commonProductRegisterGateway) {
+    public IfranchiseRegisterBoundary franchiseInputBoundary(IfranchisePresenter commonProductPresenter, IfranchiseFactory commonProductFactory, IfranchiseRegisterGateway commonProductRegisterGateway) {
         return new FranchiseInteractor(commonProductPresenter, commonProductFactory, commonProductRegisterGateway);
     }
 }
