@@ -1,7 +1,7 @@
 # nequi-service
 ## Requisitos del Sistema:
 
-Java: JDK 21 o superior (ajustar según sea necesario).
+Java: JDK 21 o superior.
 
 Base de Datos: MongoDb.
 
